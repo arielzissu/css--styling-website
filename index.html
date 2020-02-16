@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My beautiful web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="screen" onclick="toggleMenu()"></div>
+
+    <nav class="main-nav-container flex space-between align-center">
+        <div class="logo">Blogin<span class="point">.</span></div>
+        <ul class="main-nav clean-list flex">
+            <li>
+                <button class="nav-btn" href="#">Journal</button>
+            </li>
+            <li>
+                <button class="nav-btn" href="#">About</button>
+            </li>
+            <li>
+                <button class="nav-btn" href="#">Work</button>
+            </li>
+            <li>
+                <button class="nav-btn" href="#">Contact</button>
+            </li>
+        </ul>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <main class="main-content">
+
+        <div class="card flex">
+            <img src="img/1.jpg" class="card-image" alt="">
+            <div class="card-content flex direction-col space-between">
+                <h2 class="title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                <button class="btn-continue" onclick="createModal(1)">Continue Reading </button>
+            </div>
+        </div>
+
+        <div class="card flex">
+            <img src="img/2.jpg" class="card-image" alt="">
+            <div class="card-content flex direction-col space-between">
+                <h2 class="title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                <button class="btn-continue" onclick="createModal(2)">Continue Reading </button>
+            </div>
+        </div>
+
+        <div class="card flex">
+            <img src="img/3.jpg" class="card-image" alt="">
+            <div class="card-content flex direction-col space-between">
+                <h2 class="title">Duis aute irure dolor in henderit in voluptate.</h2>
+                <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+                <button class="btn-continue" onclick="createModal(3)">Continue Reading </button>
+            </div>
+        </div>
+
+        <div class="card-moves-page">
+            <div class="move-btn">Previous</div>
+            <div class="move-btn">Next</div>
+        </div>
+
+    </main>
+
+
+
+    <footer class="contein-footer flex direction-col space-around align-center">
+        <div class="logo">Blogin<span class="point">.</span></div>
+        <div class="text-footer">© 2014 Blogin.com - All Rights Reserved - Find more free Templates at Pixelhint.com</div>
+        <div class="btn-links flex">
+            <button><span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-instegram fa-stack-1x"></i>
+              </span></button>
+            <button><i class="fa fa-car fa-lg"></i></button>
+            <button><span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+              </span></button>
+            <button><span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+              </span></button>
+        </div>
+    </footer>
+
+
+    <div class="modal">
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div>
+                <div class="popupCloseButton" onclick="closeModal()">&times;</div>
+                <p class="modal-conteiner"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+
+        function createModal(num) {
+            var elModalText = document.querySelector('.modal-conteiner');
+            if (num === 1) {
+                console.log('1');
+                var strhtml = `
+                <img src="img/1.jpg" class="card-image" alt="">
+                var strText = Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                `;
+                elModalText.innerHTML = strhtml;
+            } else if (num === 2) {
+                var strhtml = '<img src="img/2.jpg" class="card-image" alt="">';
+                elModalText.innerHTML = strhtml;
+            } else if (num === 3) {
+                var strhtml = '<img src="img/3.jpg" class="card-image" alt="">';
+                elModalText.innerHTML = strhtml;
+            }
+
+            display: "block";
+
+
+            var elModal = document.querySelector('.modal');
+            elModal.style.display = 'block';
+        }
+
+        function closeModal() {
+            var elModal = document.querySelector('.modal');
+            elModal.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
